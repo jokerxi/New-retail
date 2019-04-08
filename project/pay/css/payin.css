@@ -1,0 +1,248 @@
+.payment{
+    padding: .3rem;;
+}
+.pay_box{
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    padding: 0 .25rem;
+    padding-bottom: 1rem;
+}
+.payTop{
+    width: 100%;
+    height: auto;
+    padding: .64rem .31rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+.payinfo{
+    width: 100%;
+    height: auto;
+    min-height: 1.33rem;
+    font-size: .45rem;
+}
+.payinfo>em{
+    display: inline-block;
+    width: 1.33rem;
+    height: 1.33rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .52rem;
+    margin: auto;
+}
+.payinfo>label{
+    width: 1.55rem;
+}
+.payinfo>p{
+    width: 4.8rem;
+}
+.paymin>h5{
+    height: 1.5rem;
+    font-size: .35rem;
+    color: #666666;
+}
+.paymin>div{
+    /*height: 1.4rem;*/
+    padding: .2rem 0;
+    padding-left: .75rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+.paymin>div>label{
+    width: .75rem;
+    /*height: 1rem;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-size: 1.13rem;
+}
+.paymin>div>input{
+    height: 100%;
+    width: 100%;
+    font-size: 45px;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+.paymin>p{
+    height: 1rem;
+    font-size: .35rem;
+}
+.orange{
+    color: #ff6d3a;
+}
+.paymin>p i{
+    margin-left:.2rem;
+    letter-spacing: .05rem;
+}
+.key_are {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    z-index: 16;
+}
+.keyer_box {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+}
+.keyer_box > div.key_l {
+    display: inline-block;
+    width: 100%;
+}
+.key_btn {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #444444;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.key_btngry {
+    background-color: #F1F1F1;
+}
+.key_btnbd {
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+}
+.key_btnbb {
+    border-bottom: 1px solid #e6e6e6;
+}
+.pri_delbtn {
+    width: 1rem;
+    margin: 0 auto;
+}
+.key_btn:active {
+    background-color: rgba(0,0,0,0.3);
+}
+.bink-line {
+    width: 1px;
+    height: 1rem;
+    background-color: #000000;
+    position: absolute;
+    animation: fade 1s infinite;
+    -webkit-animation: fade 1s infinite;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.check_radio.sel {
+    background-color:#fff;
+}
+.check_radio:after {
+    content:none;
+}
+.check_radio{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    position: relative;
+}
+.check_radio.sel {
+    border: 1px solid #E61600;
+}
+.check_radio.sel:before {
+    opacity: 1;
+}
+.check_radio:before{
+    content:'';
+    display: inline-block;
+    width: 15px;
+    height: 6px;
+    border-style: none none solid solid;
+    border-color: transparent transparent #E61600 #E61600;
+    border-width: 3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 2px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+}
+.fix_main_box {
+    padding-top:1.5rem;
+}
+.key_l {
+    position:relative
+}
+.coll_span_are{
+    display: inline-block;
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    border-left: 1px solid #e6e6e6;
+    border-top: 1px solid #fff;
+}
+.coll_span_are > div {
+    width:100%;
+    height:100%;
+    padding-top:1.55rem;
+}
+.coll_span_are .key_btn {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.key_btn {
+    font-weight:normal;
+    height: 1.55rem;
+    line-height: 1.55rem;
+}
+.key_btn.long>a{
+    width: 100%;
+    height: 100%;
+}
+.key_btn.long>a>em{
+    width: 50%;
+    text-align: center;
+}
+.payPriceBox{
+    display: inline-block;
+    width: auto;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: 45px;
+    position: relative;
+}
+.payPrice{
+    display: inline-block;
+    width: auto;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: 45px;
+}
+.coll_span_btn {
+    width: 100%;
+    height: 100%;
+    padding: 0 .35rem;
+    font-size: .65rem;
+    line-height: .95rem;
+    text-align: center;
+    background-color: #0cd57d;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 4px;
+}
+@keyframes fade {from {opacity: 1.0;}50% {opacity: 0;}to {opacity: 1.0;}}
+@-webkit-keyframes fade {from {opacity: 1.0;}50% {opacity: 0;}to {opacity: 1.0;}}

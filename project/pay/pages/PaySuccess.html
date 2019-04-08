@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="applicable-device" content="mobile">
+		<!-- UC强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<title>支付成功</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/paysuccess.css" />
+		<script type="text/javascript" src="../js/flexible.js" ></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.min.js" ></script>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+		<div class="page" id="app">
+            <!--class类名：wx是微信支付完成样式；zfb:是支付宝支付完成样式-->
+            <div class="payCont" v-bind:class="payAgentType" style="background-image: url(../img/BG.png);">
+            	<div class="payTop">
+                    <span class="flex f_center stateIcon">
+                        <img src="../img/icon3.png"/>
+                    </span>
+            		<p class="flex f_center state"><i><img src="../img/icon.png"/></i>支付成功</p>
+            		<p class="t_center price">¥{{orderPrice}}</p>
+                    <p class="t_center jianmian">¥{{UserPrice}}</p>
+            	</div>
+            	<div class="payMin">
+            		<p class="p_title">恭喜您获得</p>
+            		<h5 class="p_shop">{{storeName }}的返利金</h5>
+            		<div class="p_redpoc flex f_center" style="background-image: url(../img/kaquan.png);">¥<span>{{fanliPrice}}</span></div>
+            		<p class="p_tip">关注叮当会员后可获得</p>
+            	</div>
+            	<div class="payFoot">
+            		<p class="flex f_center"><i class="flex f_center"><img src="../img/icon2.png"/></i>叮当会员联合壁虎互助即将推出消费即保障权益</p>
+            		<p>敬请期待</p>
+            		<img src="../img/logo.png"/>
+            	</div>
+            </div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					orderPrice:20.00,//订单金额
+					UserPrice:20.00,//用户支付金额
+					storeName:'喜洋洋便利店',
+					fixedRatioMoney:1.00,//消费
+					weekendRedPocket:5.00,//周末
+					highConsumeRedPocket:20.00,//高消费
+					fanliPrice:26.00,//总返金额
+					payAgentType:''//支付端口
+				},
+				methods:{
+					init: function () {
+		                var ua = navigator.userAgent.toLowerCase();
+		                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		                    //微信浏览器
+		                    app.payAgentType = 'wx';
+		                } else if (ua.indexOf("alipay") != -1) {
+		                    app.payAgentType = 'zfb';
+		                }
+		            },
+		            closeWin: function () {
+		                try {
+		                    var ua = navigator.userAgent.toLowerCase();
+		                    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		                        WeixinJSBridge.call('closeWindow');
+		                    } else if (ua.indexOf("alipay") != -1) {
+		                        AlipayJSBridge.call('closeWebview');
+		                    }
+		                } catch (error) { }
+		            }
+				}
+			});
+			vm.init();
+		</script>
+	</body>
+</html>

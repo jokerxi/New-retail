@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/index/index",
+    "pages/price_list/price_list",
+    "templates/card_swiper/card_swiper",
+    "pages/default_page/default_page",
+    "pages/card_detail/card_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#333",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "叮当会员",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#41B170",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "#ccc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "images/icons/my_d.png",
+        "selectedIconPath": "images/icons/my_s.png"
+      },
+      {
+        "pagePath": "pages/price_list/price_list",
+        "text": "今日菜价",
+        "iconPath": "images/icons/price_d.png",
+        "selectedIconPath": "images/icons/price_s.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000
+  }
+}

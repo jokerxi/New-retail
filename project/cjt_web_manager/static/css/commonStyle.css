@@ -1,0 +1,51 @@
+.btn {
+    width: .9rem;
+    min-width: 64px;
+    height: .4rem;
+    line-height: .4rem;
+    color: #ffffff;
+    /* padding:4px 20px 5px; */
+    border-radius: 4px;
+    background-color: #4471FE;
+    font-size: 0.2rem;
+    vertical-align: middle;
+    border: none;
+}
+input{
+    border: none;
+}
+/*table 切换样式修改*/
+.ivu-tabs-nav-prev {
+    line-height: .5rem;
+}
+
+.ivu-tabs-nav-container {
+    font-size: .14rem;
+    /*color: #151515;*/
+}
+
+.ivu-tabs-ink-bar {
+    background-color: #4471FE;
+}
+
+.ivu-tabs-nav .ivu-tabs-tab-active {
+    color: #151515 !important;
+    font-size: 0.14rem;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+}
+
+.ivu-tabs-tab {
+    color: #767676;
+    font-size: 0.14rem;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+}
+
+.ivu-tabs-nav .ivu-tabs-tab:hover {
+    color: #767676;
+}
+/*table 切换样式修改*/
+
+
+

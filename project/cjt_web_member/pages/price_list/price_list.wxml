@@ -1,0 +1,66 @@
+<!--pages/price_list/price_list.wxml-->
+<!-- 菜价列表 -->
+<view class='price_list'>
+  <!-- 侧边栏 -->
+  <scroll-view class='sidebar' scroll-y="true" wx:if='{{priceItem.length>0?true:false}}' style='height:{{sideHeight}}'>
+    <block wx:for='{{sidebar}}' wx:key="{{}}">
+      <view class='side_box'>
+        <image src='{{selectTab==index?item.checksrc:item.src}}' data-index='{{index}}' bindtap='selectSide'></image>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 右侧内容 -->
+  <view class='list_box'>
+    <!-- 顶部栏 -->
+    <view class='list_top'>
+      <image class='subscription' src='{{subscription.src}}' data-status='0' bindtap='setSubscription'></image>
+      <!-- 下拉框 -->
+      <view class='shop_select' wx:if='{{selectItem.length>0?true:false}}'>
+        <view class='shop_box' bindtap='changeSelect'>
+          {{currentShop}}
+          <image src='../../images/icons/pull_down.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 菜价内容 -->
+    <view class='list_content' style='height:{{contentHeight}}'>
+      <!-- 菜价列表 -->
+      <scroll-view scroll-y="true" style='height:100%;' wx:if='{{priceItem.length>0?true:false}}' bindscrolltoupper='refreshList' bindscrolltolower='loadList'>
+        <view class='content_box'>
+          <view class='item_box' wx:for='{{priceItem}}' wx:key="index">
+            <view class='item_img'>
+              <image src='{{item.src}}'></image>
+            </view>
+            <view class='item_title'>
+              <view class='item_text'>
+                <text>{{item.title}}</text>
+                <text>{{item.price}}</text>
+              </view>
+              <view class='item_discount' wx:if='{{item.discount?true:false}}'>
+                <image src='../../images/icons/discount.png'></image>
+                {{item.discount}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 空列表 -->
+      <view class='empty_list' wx:if='{{priceItem.length>0?false:true}}'>
+        <image src='../../images/empty_list.gif'></image>
+        <view class='empty_text'>
+          <text>这家店铺什么都没有</text>
+          <text>换家店铺吧~</text>
+        </view>
+      </view>
+      <!-- 下拉框内容 -->
+      <view class="select_box" wx:if="{{selectShow}}">
+        <view class='select_shop_img'>
+          <image src='../../images/icons/top_icon.png'></image>
+        </view>
+        <scroll-view class='select_shop' scroll-y="true" style='max-height:{{selectHeight}}'>
+          <view class="select_item" wx:for='{{selectItem}}' bindtap="mySelect" data-index="{{index}}">{{item.text}}</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

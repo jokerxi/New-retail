@@ -1,0 +1,12 @@
+<!--login.wxml-->
+<view class='page' style='background-color:white;height:100vh'>
+  <view class='auth_layout'>
+    <image src='../../images/logo.jpg' class='auth_image'></image>
+    <view style='font-size:36rpx;margin-top:10px;'>叮当会员</view>
+    <view class='auth_desc auth_desctit'>登录后该小程序会获得以下权限</view>
+    <view class='auth_desc'>● 获得您的公开信息（头像、昵称等）</view>
+    <view class='auth_desc'>● 获得您的手机号码</view>
+    <view class='auth_desc'>● 获得支付能力</view>
+    <button class='hqc-btn' open-type="getUserInfo" bindgetuserinfo="userInfoHandler" lang="zh_CN" withCredentials="true">确认登录</button>
+  </view>
+</view>

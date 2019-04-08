@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<!-- 首页 -->
+<view class="container">
+  <view class='container-top'>
+    <view class='con-top-img'>
+      <image src='../../images/topbg.png'></image>
+    </view>
+    <swiper class="VIPcard" circular current-item-id="{{index}}" previous-margin="80rpx" next-margin="50rpx">
+      <swiper-item bindtap="onGetTo" data-rebate="{{item.rebate}}" data-shopName="{{item.shopName}}" data-classesCard="{{item.classesCard}}" wx:for="{{items}}" wx:key="index" item-id="{{item.id}}">
+        <view class="swiper-item card" data-postId="0">
+          <image class='card-img' src='../../images/card.png'></image>
+          <image class='ld-img' src='../../images/lingdang.png'></image>
+          <view class='card-text'>
+            <text>{{item.shopName}}</text>
+            <text>{{item.classesCard}}</text>
+            <text><text class='card-rebate'>￥{{item.rebate}}</text>返利金</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='containe-buttom' wx:if="{{data === true}}">
+    <view class='new-promotions'>
+      <image mode='scaleToFill' src='../../images/latest-promotions.png'></image>
+    </view>
+    <view class='merchandise'>
+      <image mode='scaleToFill' src='../../images/commodity.jpg'></image>
+      <view class='merchandise-text'>
+        <text>{{merchandiseName}}</text>
+        <text>{{discount}}折</text>
+        <view class='price'>
+          <text>￥{{price}}</text>
+          <text>￥{{original_price}}</text>
+        </view>
+        <text>{{shopName}}</text>
+        <text>发布于{{publish_time}}个小时前</text>
+      </view>
+    </view>
+    <view class='merchandise'>
+      <image mode='scaleToFill' src='../../images/commodity.jpg'></image>
+      <view class='merchandise-text'>
+        <text>{{merchandiseName}}</text>
+        <text>{{discount}}折</text>
+        <view class='price'>
+          <text>￥{{price}}</text>
+          <text>￥{{original_price}}</text>
+        </view>
+        <text>{{shopName}}</text>
+        <text>发布于{{publish_time}}个小时前</text>
+      </view>
+    </view>
+    <view class='merchandise'>
+      <image mode='scaleToFill' src='../../images/commodity.jpg'></image>
+      <view class='merchandise-text'>
+        <text>{{merchandiseName}}</text>
+        <text>{{discount}}折</text>
+        <view class='price'>
+          <text>￥{{price}}</text>
+          <text>￥{{original_price}}</text>
+        </view>
+        <text>{{shopName}}</text>
+        <text>发布于{{publish_time}}个小时前</text>
+      </view>
+    </view>
+  </view>
+  <view class='no-data' wx:if="{{data === false}}">
+    <image src='../../images/car.gif'></image>
+    <text>一大波促销商品正在路上,请持续关注</text>
+  </view>
+</view>

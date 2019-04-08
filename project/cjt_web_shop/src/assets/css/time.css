@@ -1,0 +1,126 @@
+.el-range-editor--mini .el-range-input {
+    font-size: .14rem;
+}
+.date_box1 .el-range-editor--mini .el-range-input {
+    font-size: .14rem;
+}
+
+ .el-input--small .el-input__inner {
+    height: .4rem;
+   line-height: .32rem;
+   font-size: .14rem;
+}
+/*button*/
+.query_btn{
+		font-size:0.2rem;
+		line-height:0.23rem;
+		padding:.075rem 0.213rem;
+		border-radius: 0.04rem;
+    background-color: #4471FE;
+  border-color: #4471FE;
+	}
+.el-input__icon {
+    height: 100%;
+    width: 25px;
+    text-align: center;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    line-height: .2rem;
+}
+.my_date .el-input--mini .el-input__inner {
+    height: .4rem;
+   	font-size: .14rem;
+}
+.el-range-editor--small .el-range__icon {
+    line-height: .24rem;
+}
+.el-input--small .el-input__icon {
+    line-height: .32rem;
+}
+/*修改滚动条样式*/
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper{
+  /*控制滚动条的父亲的背景色*/
+  background-color: white;
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar{
+
+  /*控制滚动条的宽度*/
+  width:6px;
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-track{
+  /*控制滚动条槽的边框色及背景色*/
+  border:1px solid rgba(231,238,238,1);
+  background-color: rgba(231,238,238,1);
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-thumb{
+  /*控制滚动槽内部的滑块的样式*/
+  border-radius: 4px;
+  background-color: rgba(68,113,254,1);
+}
+/*登录页面弹框button*/
+.table_box1 .my_table .el-button--primary.is-plain {
+  color: #000000;
+  background: #ffffff;
+  border-color: #E7EEEF;
+}
+.el-table .cell{
+  color: #000000;
+}
+
+/*鼠标移入*/
+.table_box1 .my_table .el-button--primary:hover{
+  color: #ffffff;
+  background-color: #4471FE;
+  border-color: #4471FE;
+}
+/*背景图button鼠标移入*/
+.el-button--primary:focus, .el-button--primary:hover {
+  background: #6288FF;
+  border-color: #6288FF;
+  color: #fff;
+}
+/*登录*/
+.el-table__body, .el-table__footer, .el-table__header {
+  table-layout: fixed;
+   border-collapse: collapse;
+}
+/*二维码*/
+.el-button [class*=el-icon-]+span {
+  margin-left: 0;
+}
+/*日历*/
+.el-date-table td.end-date span, .el-date-table td.start-date span {
+  background-color: #417EFE;
+}
+.el-date-table td.today span {
+  color: #417EFE;
+  font-weight: 700;
+}
+.el-range-editor.el-input__inner {
+  padding: 3px 8px 3px 10px;
+}
+.my_date[data-v-d1a2d11c] {
+  width: 3rem;
+  height: .4rem;
+  border-radius: .04rem;
+}
+.el-range-editor--small .el-range-separator {
+  line-height: .26rem;
+  font-size: .13rem;
+}
+.date_box1 .el-date-editor .el-range__icon {
+  font-size: .14rem;
+  margin-left: -.05rem;
+  color: #4471FE;
+}
+.my_date .el-range-editor--small .el-range-input {
+  font-size: .14rem;
+  height: .32rem;
+  width: .94rem;
+}
+.el-input--suffix .el-input__inner {
+  padding-right: .3rem;
+  height: .4rem;
+  font-size: .14rem;
+}
+/*日历*/

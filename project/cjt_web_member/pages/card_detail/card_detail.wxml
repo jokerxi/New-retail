@@ -1,0 +1,35 @@
+<!--pages/card_detail/card_detail.wxml-->
+<!-- 会员卡详情 -->
+<view id='card-detail'>
+  <view class='card-detail-top'>
+    <view class='card-detail-img'>
+      <image class='card-bg-img' src='../../images/card.png'></image>
+      <image class='ld-img' src='../../images/lingdang.png'></image>
+      <view class='card-text'>
+        <text>{{shopName}}</text>
+        <text>{{classesCard}}</text>
+        <text><text class='card-rebate'>￥{{rebate}}</text>返利金</text>
+      </view>
+      <view class='allMoney'>
+        <view>
+          <text>当前返利金</text>
+          <text>{{rebate}}元</text>
+        </view>
+        <view>
+          <text>共获得</text>
+          <text>{{allMoney}}元</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class='card-detail-bottom'>
+    <view class='consumption-details' wx:for='{{keep_accounts}}' wx:key='index'>
+      <view>
+        <text>{{item.offline_consumption}}</text>
+        <text>{{item.time_consumption}}</text>
+      </view>
+      <text>{{item.money}}元</text>
+    </view>
+  </view>
+</view>

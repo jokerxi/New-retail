@@ -1,0 +1,30 @@
+.auth_image {
+width: 100rpx;
+height: 100rpx;
+border-radius: 50%;
+border: 1rpx solid #ccc;
+margin: 0 auto;
+}
+.auth_layout{
+padding-top: 100rpx;
+text-align: center;
+}
+.auth_desc{
+margin-top: 10px;
+float:left;
+margin-left: 20%;
+color: #929292;
+font-size: 32rpx;
+}
+.auth_desctit{font-size: 35rpx;color: #333333;margin-top: 50px;}
+.hqc-btn{
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #2acc44;
+  color: #ffffff;
+  font-size: 35rpx;
+  border: 0;
+  overflow:hidden;
+  margin-top:260px
+  }

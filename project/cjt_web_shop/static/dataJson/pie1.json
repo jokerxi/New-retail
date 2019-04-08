@@ -1,0 +1,85 @@
+[
+{
+  "slideinit":
+  {
+    "title": "实时概况",
+    "toDayClient": 12342,
+    "toDayUp": 12.3,
+    "state": "上升",
+    "toDayState": "↑",
+    "isUp": false
+  },
+  "AllMoney": 123456.12,
+  "AllMoneys": [
+  {
+    "name": "已抵扣",
+    "money": 123123
+  },
+  {
+    "name": "发放中",
+    "money": 123123
+  },
+  {
+    "name": "奖金池",
+    "money": 123123
+  }],
+  "pie1": [
+  {
+    "value": 335,
+    "name": "微信未关注"
+  },
+  {
+    "value": 310,
+    "name": "支付宝"
+  },
+  {
+    "value": 234,
+    "name": "微信关注"
+  },
+  {
+    "value": 200,
+    "name": "线下"
+  }],
+  "pie2": [
+  {
+    "value": 335,
+    "name": "微信未关注"
+  },
+  {
+    "value": 310,
+    "name": "支付宝"
+  },
+  {
+    "value": 234,
+    "name": "微信关注"
+  },
+  {
+    "value": 200,
+    "name": "线下"
+  }],
+  "pie3": [
+  {
+    "value": 100,
+    "name": "微信未关注"
+  },
+  {
+    "value": 310,
+    "name": "支付宝"
+  },
+  {
+    "value": 234,
+    "name": "微信关注"
+  },
+  {
+    "value": 100,
+    "name": "线下"
+  },
+  {
+    "value": 234,
+    "name": "微信关注2"
+  },
+  {
+    "value": 200,
+    "name": "线下3"
+  }]
+}]

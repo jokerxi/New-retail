@@ -1,0 +1,12 @@
+<!-- 缺省页 -->
+<!--pages/default_page/default_page.wxml-->
+<view class='no_vip'>
+  <view class='gif_box'>
+    <image src='../../images/default_page.gif'></image>
+  </view>
+  <view>
+    <p class='tip'>您还不是叮当会员合作超市的会员</p>
+    <p class='tip'>前往叮当会员合作超市微信支付过</p>
+    <p class='tip'>即可获得优惠信息</p>
+  </view>
+</view>

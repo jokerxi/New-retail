@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="applicable-device" content="mobile">
+    <!-- UC强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <link rel="stylesheet" href="../css/common.css" />
+    <link href="../css/payin.css" rel="stylesheet" />
+    <script src="../js/jquery-1.10.2.min.js?v1.0"></script>
+    <script src="../js/flexible.js?v1.0"></script>
+    <script src="../js/Common.js?v1.0"></script>
+    <script src="../js/vue.js?v1.0"></script>
+    <title>喜洋洋便利店</title>
+</head>
+
+<body>
+    <div class="page" id="main-content" v-cloak>
+        <div class="section" style="padding-top: 0;">
+            <div class="payment">
+                <div class="pay_box">
+                    <div class="payTop">
+                        <div class="payinfo flex f_relative">
+                            <label>付款给</label>
+                            <p class="t_o">{{shopname}}</p>
+                            <em>
+                                <img v-bind:src="shopheadsrc" />
+                            </em>
+                        </div>
+                    </div>
+                    <div class="payFoot">
+                        <div class="paymin">
+                            <h5 class="flex">消费金额</h5>
+                            <div class="flex f_relative">
+                                <label class="flex f_center payinfo-inpt">¥</label>
+                                <div class="payPriceBox">
+                                    <span class="payPrice"></span>
+                                    <input type="hidden" class="payinfo-inp flex" maxlength="8" step="0.01" id="payMenoy" readonly="readonly" />
+                                    <div class="bink-line"></div>
+                                </div>
+                            </div>
+                            <p class="flex f_between" v-if="userAmount>0 && payMenoy &&payMenoy>0">
+                                <label class="orange">返利抵扣{{dedmenoy|keepTwoNum}}元</label>
+                                <em>实际支付<i>¥{{allpay|keepTwoNum}}元</i></em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="key_are">
+                <div class="keyer_box flex">
+                    <div class="key_l">
+                        <div class="key_list flex key_btnbb">
+                            <span class="key_btn flex_tel pri_btn" data-num="1">1</span>
+                            <span class="key_btn flex_tel pri_btn key_btnbd" data-num="2">2</span>
+                            <span class="key_btn flex_tel pri_btn" data-num="3">3</span>
+                            <span class="flex_tel"></span>
+                        </div>
+                        <div class="key_list flex key_btnbb">
+                            <span class="key_btn flex_tel pri_btn" data-num="4">4</span>
+                            <span class="key_btn flex_tel pri_btn key_btnbd" data-num="5">5</span>
+                            <span class="key_btn flex_tel pri_btn" data-num="6">6</span>
+                            <span class="flex_tel"></span>
+                        </div>
+                        <div class="key_list flex key_btnbb">
+                            <span class="key_btn flex_tel pri_btn" data-num="7">7</span>
+                            <span class="key_btn flex_tel pri_btn key_btnbd" data-num="8">8</span>
+                            <span class="key_btn flex_tel pri_btn" data-num="9">9</span>
+                            <span class="flex_tel"></span>
+                        </div>
+                        <div class="key_list flex" style="width:75%">
+                            <span class="key_btn flex_tel2 long pri_btn " data-num="0" style="border-left: 1px solid transparent;border-right: 1px solid transparent; text-align: left;">
+                                <a class="flex">
+                                    <em>0</em>
+                                    <em></em>
+                                </a>
+                            </span>
+                            <!--<span class="flex_tel pri_btn" style="height:1.55rem;border-right: 1px solid #ffffff;"></span>-->
+                            <span class="key_btn flex_tel pri_btn key_btnbd" data-num="." style="border-right:none;">·</span>
+                        </div>
+                        <div class="coll_span_are">
+                            <div class="f_relative">
+                                <span class="key_btn flex pri_del " style="border-bottom:1px solid #e6e6e6" data-num="del"><img class="pri_delbtn" src="../img/pri_del.png" /></span>
+                                <span class="be_pay_btn coll_span_btn flex f_center" v-on:click="goPay">确认支付</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/payindex.js"></script>
+    <script type="text/javascript">
+    var name, value;
+    var str = location.href; //取得整个地址栏
+    var num = str.indexOf("?");
+    str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+
+    var arr = str.split("&"); //各个参数放到数组里
+    var shopId = "";
+    var code = "";
+    var openId = "";
+    for (var i = 0; i < arr.length; i++) {
+        num = arr[i].indexOf("=");
+        if (num > 0) {
+            name = arr[i].substring(0, num);
+            value = arr[i].substr(num + 1);
+            if (name == "shopId") {
+                shopId = value;
+            }
+            if (name == "code") {
+                code = value;
+            }
+        }
+    }
+
+    var json = {
+        "shopId": shopId,
+        "code": code
+    };
+
+    $.ajax({
+        type: "POST",
+        url: 'http://192.168.0.71:9009/wechat/getOpenId',
+        data: JSON.stringify(json),
+        contentType: "application/json",
+        dataType: "json",
+        complete: function(res) {
+            openId = res.responseJSON.data.openid;
+            console.log(openId)
+        }
+    });
+
+    //websocket
+    var ws_url = location;
+    var ws = new WebSocket('ws//' + ws_url);
+    // 连接成功后的回调函数
+    ws.addEventListener('open', function(evt) {
+        console.log('Connection open ...');
+        ws.send('open');
+    });
+    // 连接关闭后的回调函数
+    ws.addEventListener('close', function(evt) {
+        var code = event.code;
+        var reason = event.reason;
+        var wasClean = event.wasClean;
+    });
+    // 收到服务器数据后的回调函数
+    ws.addEventListener('message', function(evt) {
+        var data = evt.data;
+        // 判断数据是字符串还是二进制数据
+        if (typeof data === String){
+            console.log('data is string');
+        }
+        if (typeof data instanceof ArrayBuffer) {
+            var buffer = evt.data;
+            console.log('data is ArrayBuffer');
+        }
+    });
+    // 报错时的回调函数
+    es.addEventListener('error', function (err) {
+        console.log(err);
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+/*输入框样式调整*/
+.el-form-item__label {
+  text-align: right;
+  float: left;
+  font-size: .14rem;
+  color: #151515;
+  line-height: .3rem;
+  padding: 0 12px 0 0;
+
+}
+.el-form-item--mini .el-form-item__content, .el-form-item--mini .el-form-item__label {
+  line-height: 30px;
+}
+.el-input--mini .el-input__inner {
+  height:.3rem;
+  line-height: .3rem;
+  border: 1px solid #E7EEEF;
+  width: 1.34rem;
+  color: #151515;
+}
+/*三角图标*/
+.el-range__close-icon:before {
+  content: '';
+  position: absolute;
+  top: .1rem;
+  background: url(../../../static/images/icons/downicon@2x.png) no-repeat;
+  background-size: 100%;
+  width: .1rem;
+  height: .1rem;
+}
+.el-range-editor--small .el-range__close-icon, .el-range-editor--small .el-range__icon {
+  line-height: .2rem;
+  color: #4471FE;
+}
+.el-range-editor--small .el-range-separator {
+  line-height: .15rem;
+}
+/*搜索输入框*/
+
+.add_Modal_search input {
+  border: 1px solid #E7EEEF;
+  color: #767676;
+  display: inline-block;
+  font-size: inherit;
+  width: 2.2rem;
+  height: .3rem;
+  line-height: .3rem;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  outline: 0;
+  padding: 0 15px;
+  -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+  margin-right: .08rem;
+}
+.el-radio__label {
+  font-size: 14px;
+  padding-left: 10px;
+  color: #151515;
+  margin-right: .2rem;
+}
+/*日历*/
+.el-date-table td.end-date span, .el-date-table td.start-date span {
+  background-color: #417EFE;
+}
+.el-date-table td.today span {
+  color: #417EFE;
+  font-weight: 700;
+}
+.el-range-editor--small .el-range-input {
+  font-size: .14rem;
+}
+.el-range-editor.el-input__inner {
+  padding: 3px 5px 3px 10px;
+}
+/*修改滚动条样式*/
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper{
+  /*控制滚动条的父亲的背景色*/
+  background-color: white;
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar{
+
+  /*控制滚动条的宽度*/
+  width:6px;
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-track{
+  /*控制滚动条槽的边框色及背景色*/
+  border:1px solid rgba(231,238,238,1);
+  background-color: rgba(231,238,238,1);
+}
+.table_box1 .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-thumb{
+  /*控制滚动槽内部的滑块的样式*/
+  border-radius: 4px;
+  background-color: rgba(68,113,254,1);
+}

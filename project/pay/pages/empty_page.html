@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付页面</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div>
+<!--     <h1>测试页面</h1>
+    <button>点击按钮</button> -->
+</div>
+<script type="text/javascript">
+    var shopId = 8001;
+    $.getJSON('http://192.168.0.71:9009/wechat/getAppIdByShopId/' + shopId , function(res){
+        console.log(res.data.appId);
+        var appId = res.data.appId;
+        var returnUrl = encodeURIComponent("http://pengchao.hhg365.cn/pages/index.html?shopId=" + shopId);
+        var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appId + "&redirect_uri=" + returnUrl + "&response_type=code&scope=snsapi_base&state=123#wechat_redirect ";
+        window.location.href = url;
+    });
+</script>
+</body>
+</html>j
